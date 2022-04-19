@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+    <title>Resume Maker</title>
+    <style>
+        body{
+            background: #327b8f;
+            
+        }
+        b{
+            color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form{
+         display: grid;        
+        }
+        form input{
+            width: 200px;
+        }
+        .btn{
+            width: 70px;
+            margin-left: 50px;
+            margin-top: 20px;
+            padding:10px 12px 10px 10px;
+            background-color: #279269;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0px 1px 20px 1px rgb(88, 77, 77);
+        }
+        .btn:hover{
+            box-shadow: 0px 1px 20px 1px rgb(158, 146, 146);
+        }
+        ::placeholder{
+            color: rgb(24, 119, 202);
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: aliceblue;
+           
+        }
+    </style>
+</head>
+<body>
+    <h1>Resume Creater</h1>
+    <form action="prct2.html">
+      <b>Name:</b> <input type="text"  id="uname" placeholder="Enter Your Name" required autocomplete="username"><br>
+
+      <b>Email:</b> <input type="text" id="email" placeholder="Enter Your Email" required autocomplete="email"><br>
+
+      <b>D.O.B:</b>  <input type="date" id="dateof" placeholder="" required autocomplete="bday"><br>
+
+      <b>Education:</b>  <input type="text" id="edu" placeholder="Enter Your Education" required ><br>
+
+      <b>Address:</b>  <input type="text" id="address" placeholder="Enter Your Address" required autocomplete="address-line1"><br>
+
+      <b>Mobile:</b>  <input type="tel" id="mobile" placeholder="Enter Your Mobile.No" required autocomplete="mobile"><br>
+
+      <b>Project-Tittle:</b> <input type="text" id="project-tittle" placeholder="Enter you Project-Tittle"><br>
+
+      <b>Project-Description</b> <input type="text" id="Project-Description" placeholder="Project-Description"><br>  
+
+      <b>Project-URL:</b> <input type="text"  id="Project-Url" placeholder="Project-URL"><br>
+
+      <b>Skills:</b> <input type="text" id="skills" placeholder="Place your skills"><br>
+
+      <b>Hobbies:</b> <input type="text" id="hobbies" placeholder="Place Your Hobbies "><br>
+
+       <input type="submit" value="Generate" onclick="passValue()" class="btn" >
+    </form>
+    <script>
+        function passValue(){
+
+            var firstname = document.getElementById("uname").value;
+            localStorage.setItem("name",firstname);
+
+            var email = document.getElementById("email").value;
+            localStorage.setItem("email",email);
+
+            var date = document.getElementById("dateof").value;
+            localStorage.setItem("date",date);
+
+            var education = document.getElementById("edu").value;
+            localStorage.setItem("empty",education);
+            
+            var address = document.getElementById("address").value;
+            localStorage.setItem("add",address);
+
+            var mobile = document.getElementById("mobile").value;
+            localStorage.setItem("mobi",mobile);
+            
+            var project_tittle = document.getElementById("project-tittle").value;
+            localStorage.setItem("project_tittle",project_tittle);
+
+            var project = document.getElementById("Project-Description").value;
+            localStorage.setItem("project",project);
+
+            var ProjectURL= document.getElementById("Project-Url").value;
+            localStorage.setItem("projectURL",ProjectURL);
+
+            var skills = document.getElementById("skills").value;
+            localStorage.setItem("skills",skills);
+
+            var hobbies = document.getElementById("hobbies").value;
+            localStorage.setItem("hobbies",hobbies);
+
+            return false;
+        }
+
+    </script>
+</body>
+</html>

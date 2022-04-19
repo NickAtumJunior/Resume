@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+     <title>Resume Maker | Landing page</title>
+     <style>
+          body{
+               background-color: rgb(34, 121, 79);
+               font-family: Arial, Helvetica, sans-serif;
+               align-items: center;
+          }
+          b{
+               color: rgb(0, 0, 0);
+               width: 100%;
+               height: auto;
+               
+          }
+          span{
+               color: rgb(0, 0, 0);
+          }
+          h1{
+               color: rgb(0, 0, 0);
+               font-size: 32px;
+          }
+          #down{
+               background-image: url(images/composition-3288396_1920.jpg);
+               background-size: contain;
+               width: 700px;
+               height: fit-content;
+               padding: 10px 10px;
+               align-items: center;
+               text-align: center;
+               justify-content: center;
+          }
+
+          ul li{
+               list-style: none;
+               width: fit-content;
+               height: fit-content;
+               padding: 10px 10px;
+               color: blue;
+               font-weight: bold;
+               word-break: keep-all;
+          }
+          span{
+               font-weight: 100;
+               background-color: transparent;
+               padding: 10px 10px;
+               margin-left: 7px;
+          }
+          button{
+               margin-top: 20px;
+               margin-left: 200px;
+               background-color: aqua;
+               border: 2px solid aqua;
+               padding: 6px 18px;
+               border-radius: 12px;
+               width: fit-content;
+               cursor: pointer;
+          }
+     </style>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+     
+               <div id="down">
+                     <h1> Resume</h1>    
+                     <ul>
+                          
+                          <li>Name :<span id="name"></span></li>
+                          <li>Email :<span id="email"></span></li>
+                          <li>D.O.B :<span id="date"></span></li>
+                          <li>Education :<span id="edu"></span></li>
+                          <li>Address :<span id="add"></span></li>
+                          <li>Mobile :<span id="mobi"></span></li>
+                          <li>Project-Tittle : <span id="ptittle"></span></li>
+                          <li>Project-Description : <span id="pdes"></span></li>
+                          <li>Project-URL : <span id="purl"></span></li>
+                          <li>Skills : <span id="skills"></span></li>
+                          <li>Hobbies : <span id="hobbies"></span></li>
+                     </ul>
+
+               </div>
+
+               <button onclick="generatePDF()">Download</button>
+
+     <script>
+          
+         document.getElementById("name").innerHTML = localStorage.getItem("name")
+         document.getElementById("email").innerHTML  = localStorage.getItem("email")
+         document.getElementById("date").innerHTML = localStorage.getItem("date")
+         document.getElementById("edu").innerHTML = localStorage.getItem("empty")
+         document.getElementById("add").innerHTML = localStorage.getItem("add")
+         document.getElementById("mobi").innerHTML = localStorage.getItem("mobi")
+         document.getElementById("ptittle").innerHTML = localStorage.getItem("project_tittle")
+         document.getElementById("pdes").innerHTML = localStorage.getItem("project")
+         document.getElementById("purl").innerHTML = localStorage.getItem("projectURL")
+         document.getElementById("skills").innerHTML = localStorage.getItem("skills")
+         document.getElementById("hobbies").innerHTML = localStorage.getItem("hobbies")
+      
+      
+         function generatePDF(){
+           
+          var one = document.getElementById("down");
+             html2pdf()
+             .from(one)
+             .save();
+             
+        }
+       
+ </script>   
+</body>
+</html>
